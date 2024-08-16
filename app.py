@@ -7,7 +7,7 @@ from tensorflow.keras.models import load_model
 # Load the trained model
 model = load_model('cnn_classification_model.h5')
 
-# Set the title of the app
+# Set the title of the web app
 st.title("Bone Fracture Detection")
 
 # Add a file uploader to allow users to upload a photo
