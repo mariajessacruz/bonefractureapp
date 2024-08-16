@@ -21,7 +21,6 @@ class_labels = {
     3: "Humerus Fracture",
     4: "Shoulder Fracture",
     5: "Wrist Positive",
-    6: "No fracture",  # Assuming this is still the 7th class, adjust if necessary
 }
 
 def preprocess_image(image):
