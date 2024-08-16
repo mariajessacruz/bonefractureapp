@@ -15,7 +15,7 @@ uploaded_file = st.file_uploader("Choose an X-ray image...", type=["jpg", "jpeg"
 
 # Define the class labels based on your training
 class_labels = {
-    0: "Elbow Positive",
+    1: "Elbow Positive",
     1: "Fingers Positive",
     2: "Forearm Fracture",
     3: "Humerus Fracture",
