@@ -42,8 +42,6 @@ def extract_features(image):
 
     # Perform Sobel edge detection
     edges = tf.image.sobel_edges(gray_image)
-    
-    # Squeeze the extra dimension for further processing
     edges = tf.reduce_mean(edges, axis=-1).numpy().squeeze()
 
     # Flatten the edge image to simulate feature extraction
