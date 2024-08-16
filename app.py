@@ -13,6 +13,17 @@ st.title("Bone Fracture Detection")
 # Add a file uploader to allow users to upload a photo
 uploaded_file = st.file_uploader("Choose an X-ray image...", type=["jpg", "jpeg", "png"])
 
+# Define the class labels based on your training
+class_labels = {
+    0: "No fracture",
+    1: "Fracture type A",
+    2: "Fracture type B",
+    3: "Fracture type C",
+    4: "Fracture type D",
+    5: "Fracture type E",
+    6: "Fracture type F",
+}
+
 def preprocess_image(image):
     # Resize the image to 224x224 pixels as required by the model
     image = image.resize((224, 224))
@@ -61,9 +72,9 @@ if uploaded_file is not None:
 
     # Perform prediction using all three inputs
     prediction = model.predict([processed_image, hog_features, gray_image])
-    predicted_class = np.argmax(prediction, axis=1)
+    predicted_class = np.argmax(prediction, axis=1)[0]
 
-    # Display the prediction
-    st.write(f"Prediction: {predicted_class[0]}")
+    # Display the prediction with class label
+    st.write(f"Prediction: {class_labels[predicted_class]}")
 else:
     st.write("Please upload an X-ray image to get a prediction.")
