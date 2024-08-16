@@ -7,7 +7,7 @@ from tensorflow.keras.models import load_model
 # Load the trained model
 model = load_model('cnn_classification_model.h5')
 
-# Set the title of the web app
+# Set the title of the app
 st.title("Bone Fracture Detection")
 
 # Add a file uploader to allow users to upload a photo
@@ -15,13 +15,13 @@ uploaded_file = st.file_uploader("Choose an X-ray image...", type=["jpg", "jpeg"
 
 # Define the class labels based on your training
 class_labels = {
-    0: "No fracture",
-    1: "Fracture type A",
-    2: "Fracture type B",
-    3: "Fracture type C",
-    4: "Fracture type D",
-    5: "Fracture type E",
-    6: "Fracture type F",
+    0: "Elbow Positive",
+    1: "Fingers Positive",
+    2: "Forearm Fracture",
+    3: "Humerus Fracture",
+    4: "Shoulder Fracture",
+    5: "Wrist Positive",
+    6: "No fracture",  # Assuming this is still the 7th class, adjust if necessary
 }
 
 def preprocess_image(image):
