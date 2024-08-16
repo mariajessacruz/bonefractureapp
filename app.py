@@ -19,7 +19,7 @@ class_labels = {
     1: "Fingers Positive",
     2: "Forearm Fracture",
     3: "Humerus Fracture",
-    4: "Humerus",
+    0: "Humerus",
     5: "Shoulder Fracture",
     6: "Wrist Positive",
 }
