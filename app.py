@@ -14,13 +14,15 @@ st.title("Bone Fracture Detection")
 uploaded_file = st.file_uploader("Choose an X-ray image...", type=["jpg", "jpeg", "png"])
 
 # Define the class labels based on your training
+# Define the class labels based on your training
 class_labels = {
     0: "Elbow Positive",
     1: "Fingers Positive",
     2: "Forearm Fracture",
     3: "Humerus Fracture",
-    4: "Shoulder Fracture",
-    5: "Wrist Positive",
+    4: "Humerus",
+    5: "Shoulder Fracture",
+    6: "Wrist Positive",
 }
 
 def preprocess_image(image):
